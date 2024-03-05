@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet', href='../public/css/style.css')
+    link(rel='icon', href='../public/favicon.png')
+    script(src='/socket.io/socket.io.js')
+    script(src='../js/login.mjs')
+  body
+    div(class='issue-popup')
+    div(class='mainWrapper')
+      include header
+      if body != null
+        div(class='messages')
+          for repo in repos
+            div(class="repo")
+              h1= repo.name
+              p= repo.description
+              a(href="/repo/" + repo.id)= "View"

@@ -1,0 +1,19 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='../public/css/style.css')
+    link(rel='icon', href='../public/favicon.png')
+    title
+  body
+    div(class='issue-popup')
+    div(class='mainWrapper')
+      include header
+      div(class='issue-create')
+        h1= 'Create Issue'
+        form(action='/create' method='post')
+          label(for='title') Title
+          input(type='text' name='title' id='title')
+          label(for='description') Description
+          input(type='text' name='description' id='description')
+          input(type='submit' value='Create')

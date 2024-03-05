@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href="../public/css/login.css")
+    link(rel='icon', href='../public/favicon.png')
+    script(src='/socket.io/socket.io.js')
+    script(src='../js/login.mjs') 
+    title= title
+  body
+    div(class='issue-popup')
+    div(class='mainWrapper')
+      include header
+      form(action='/login', method='POST')
+        div(class='inputWrapper')
+          label(for='username') Username
+          input(type='text', name='username', id='username')
+        div(class='inputWrapper')
+          label(for='password') Password
+          input(type='password', name='password', id='password')
+        div(class='inputWrapper')
+          input(type='submit', value='Login')
+      div(class="registerWrapper")
+        p(class='register') Don't have an account? 
+        a(href='/register') Register

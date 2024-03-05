@@ -1,0 +1,30 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='../public/css/style.css')
+    link(rel='icon', href='../public/favicon.png')
+    script(src='/socket.io/socket.io.js')
+    script(src='../js/index.mjs')
+    title
+  body
+    div(class='issue-popup')
+    div(class='mainWrapper')
+      include header
+      div(class='issue-create')
+        h1= 'Create Issue'
+        form(action='/repo/' + repoid + '/create' method='post')
+          label(for='title') Title
+          input(type='text' name='title' id='title')
+          label(for='description') Description
+          input(type='text' name='description' id='description')
+          input(type='submit' value='Create')
+      div(class='messages')
+        each issue in issues
+          if issue.state == 'opened'
+            div(class='repo' id=issue.iid)
+              h1 Title: #{issue.title}
+              p Description: #{issue.description}
+              form(action='/repo/' + issue.project_id + '/close/' + issue.iid method='post')
+                input(type='hidden' name='id' value=issue.iid)
+                input(class="deleteButton" type='submit' value='Close issue')

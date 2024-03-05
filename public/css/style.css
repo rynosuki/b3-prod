@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mainWrapper {
+  background-color: #313131;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  gap: 10px;
+}
+
+.header {
+  width: 50%;
+  height: 5%;
+  background-color: #464646;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.nav > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 32px;
+}
+
+.messages {
+  width: 50%;
+  height: 80%;
+  background-color: #464646;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+}
+
+.messages::-webkit-scrollbar {
+  width: 0;
+}
+
+.message,
+.repo {
+  width: 80%;
+  height: 10%;
+  background-color: #747373;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadein 1s linear;
+  position: relative;
+}
+
+.repo > a,
+.repo > form > input[type=submit],
+.issue-create > form > input[type=submit] {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  border: 1px solid #fff;
+  padding: 4px 16px;
+  margin-bottom: 4px;
+  transition: 0.5s;
+  background-color: #74737300;
+}
+
+.repo > a:hover,
+.repo > form > input[type=submit]:hover,
+.issue-create > form > input[type=submit]:hover {
+  background-color: #fff;
+  color: #747373;
+}
+
+.closed {
+  animation: fadeout 1s linear;
+}
+
+.issue-popup {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.issue-popup-item {
+  width: 80%;
+  padding: 8px;
+  background-color: #747373;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeinout 3s ease-out;
+  -webkit-animation: fadeinout 3s ease-out;
+  opacity: 0;
+}
+
+.issue-create {
+  width: 50%;
+  height: 80%;
+  background-color: #464646;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.issue-create > form {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 80%;
+}
+
+.issue-create > form > input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  background-color: #747373;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.issue-create > form > label {
+  font-size: 24px;
+  color: #fff;
+}
+
+.deleteButton {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

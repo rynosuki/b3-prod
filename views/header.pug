@@ -1,0 +1,10 @@
+div(class='header')
+  h1= title
+  if body != null
+    h2= 'Logged in as ' + body.name
+  div(class='nav')
+    a(href='/') Home
+    if body == null
+      a(href='/login') Login
+    else
+      a(href='/logout') Logout

@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mainWrapper {
+  background-color: #313131;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  gap: 10px;
+}
+
+.header {
+  width: 50%;
+  height: 5%;
+  background-color: #464646;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.nav {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.nav > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 32px;
+  transition: 0.5s;
+}
+
+.nav > a:hover {
+  color: #bbb;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.inputWrapper {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.inputWrapper > label {
+  font-size: 32px;
+}
+
+.inputWrapper > input {
+  width: 50%;
+  height: 42px;
+  font-size: 32px;
+}
+
+.inputWrapper > input[type="submit"] {
+  width: 100%;
+  height: 42px;
+  font-size: 32px;
+  transition: 0.5s;
+}
+
+.inputWrapper > input[type="submit"]:hover {
+  background-color: #bbb;
+}
+
+.registerWrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.registerWrapper > a {
+  text-decoration: underline;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.registerWrapper > a:hover {
+  color: #bbb;
+}
+
+.issue-popup {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.issue-popup-item {
+  width: 100%;
+  height: 16vh;
+  background-color: #747373;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeinout 3s ease-out;
+  -webkit-animation: fadeinout 3s ease-out;
+  opacity: 0;
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
